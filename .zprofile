@@ -19,6 +19,7 @@ alias .4="cd ../../../../"
 alias .5="cd ../../../../../"
 
 ## kubernetes aliases
+alias k="kubectl"
 alias kcon="kubectl config get-contexts"
 alias kcon-minikube="kubectl config use-context minikube"
 alias kcon-test="kubectl config use-context api.test.corp.mongodb.com"
