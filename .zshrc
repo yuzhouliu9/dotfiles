@@ -1,6 +1,11 @@
 # Enable autocomplete for zsh
 autoload -Uz compinit
 compinit
+zstyle ':completion:*' menu select
+
+# kubernetes autocomplete
+source <(kubectl completion zsh)
+complete -F __start_kubectl k
 
 # Terraform autocomplete
 autoload -U +X bashcompinit && bashcompinit
@@ -39,7 +44,8 @@ function iterm2_print_user_vars() {
   #iterm2_set_user_var pythonVirtualenv "$(pyenv version-name)"
   # this command is kind of ugly, but faster than multiple kubectl calls
   iterm2_set_user_var kubeContext "$(kubectl config get-contexts | grep '^\*' | awk '{print $2" : "$5}')"
-}
 
-# text color: b2b2b2
-# background color: 333333
+# iTerm2 status bar settings:
+# - text color: b2b2b2
+# - background color: 333333
+}
